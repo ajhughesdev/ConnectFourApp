@@ -1,6 +1,17 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+        <PageTitle>Frontend Mentor | Connect Four game</PageTitle>
 
-<h1>Clean Blazor</h1>
+        <div class="board-cpntainer">
+                <img src="./assets/images/board-layer-black-large.svg" alt="" class="board-layer_black" />
+                <div class="board">
+                        @for (var i = 0; i < 42; i++)
+                        {
+                                <span class="board-cell"><span></span></span>
+                        }
+                </div>
+        </div>
 
+@code {
+
+}      
