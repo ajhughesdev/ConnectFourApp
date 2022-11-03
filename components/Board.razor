@@ -1,0 +1,42 @@
+@inject ConnectFourApp.Shared.State State
+
+<div class="play-menu">
+    <span @onclick="() => PlayPiece(0)">x</span>
+    <span @onclick="() => PlayPiece(1)">x</span>
+    <span @onclick="() => PlayPiece(2)">x</span>
+    <span @onclick="() => PlayPiece(3)">x</span>
+    <span @onclick="() => PlayPiece(4)">x</span>
+    <span @onclick="() => PlayPiece(5)">x</span>
+    <span @onclick="() => PlayPiece(6)">x</span>
+</div>
+
+<div class="board-container">
+
+    <div class="board">
+        @for (var i = 0; i < 42; i++)
+        {
+            <span class="board-cell"><span></span></span>
+        }
+
+    </div>
+
+    @for (var i = 0; i < 42; i++)
+    {
+        <span class="@Chips[i]"></span>
+    }
+
+</div>
+
+@code {
+
+    private string[] Chips = new string[42];
+
+    private void PlayPiece(byte column)
+    {
+        var playedCell = State.PlayPiece(column);
+        var addCssClass = $"player{State.CurrentPlayer} col{column} drop{playedCell}";
+        Chips[State.CurrentTurn - 1] = addCssClass;
+    }
+
+
+}
