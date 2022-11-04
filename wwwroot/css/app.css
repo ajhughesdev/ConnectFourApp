@@ -18,11 +18,8 @@
 html {
     font-size: 16px;
     font-family: "Space Grotesk", "Space Grotesk-fallback", sans-serif;
-    background-color: #7945FF;
-    background-image: url("./../assets/images/your-turn-container.svg");
-    background-position: bottom center;
-    background-repeat: no-repeat;
-    background-size: contain;
+    position: relative;
+    background-color: #5C2DD5;
     height: 100vh;
 }
 

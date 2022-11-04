@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <!-- <Nullable>enable</Nullable> -->
+    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
@@ -11,12 +11,4 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.10" PrivateAssets="all" />
   </ItemGroup>
 
-
-
-  <ItemGroup>
-    <None Remove="components\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="components\" />
-  </ItemGroup>
 </Project>

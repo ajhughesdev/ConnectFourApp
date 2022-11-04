@@ -24,6 +24,11 @@ public class State
 
   public List<int> GameBoard { get; private set; } = new List<int>(new int[42]);
 
+  public void ResetBoard()
+  {
+    GameBoard = new List<int>(new int[42]);
+  }
+
   private byte ConvertPlayedCellToRow(int playedCell) => (byte)(Math.Floor(playedCell / (decimal)7) + 1);
 
 }
