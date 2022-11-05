@@ -154,16 +154,16 @@ main {
 }
 
 .board-cell {
-    width: 61px;
-    height: 61px;
+    width: 67px;
+    height: 67px;
     overflow: hidden;
     background-color: transparent;
     position: relative;
 }
 
 .board-cell span {
-    width: 61px;
-    height: 61px;
+    width: 67px;
+    height: 67px;
     position: absolute;
     display: block;
     left: 0;
@@ -262,7 +262,7 @@ main {
     90%,
     97%,
     100% {
-        transform: translateY(1rem);
+        transform: translateY(1.1rem);
     }
 
     80% {
@@ -284,7 +284,7 @@ main {
     90%,
     97%,
     100% {
-        transform: translateY(6.5rem);
+        transform: translateY(6.6rem);
     }
 
     80% {
@@ -306,7 +306,7 @@ main {
     90%,
     97%,
     100% {
-        transform: translateY(12rem);
+        transform: translateY(12.1rem);
     }
 
     80% {
@@ -328,7 +328,7 @@ main {
     90%,
     97%,
     100% {
-        transform: translateY(17.5rem);
+        transform: translateY(17.6rem);
     }
 
     80% {
@@ -350,7 +350,7 @@ main {
     90%,
     97%,
     100% {
-        transform: translateY(23rem);
+        transform: translateY(23.1rem);
     }
 
     80% {
@@ -372,7 +372,7 @@ main {
     90%,
     97%,
     100% {
-        transform: translateY(28.5rem);
+        transform: translateY(28.6rem);
     }
 
     80% {
