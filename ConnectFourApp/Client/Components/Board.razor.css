@@ -1,9 +1,5 @@
 .page-container {
     background: #7945FF;
-    background-image: url("./../assets/images/winners-bar.svg");
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: contain;
     height: 100vh;
     width: 100vw;
 }
@@ -90,6 +86,8 @@ main {
     align-items: center;
     justify-content: center;
     margin-inline: 203px;
+    position: relative;
+    z-index: 1;
 }
 
 .player-board {
@@ -395,13 +393,16 @@ main {
     right: 0;
     margin-inline: auto;
     margin-top: -40px;
+    z-index: 2;
 }
 
-.your-turn_fill1 {
+.your-turn_fill1,
+.player1-fill {
     fill: #FD6687;
 }
 
-.your-turn_fill2 {
+.your-turn_fill2,
+.player2-fill {
     fill: #FFCE67;
 }
 
@@ -411,4 +412,53 @@ main {
 
 .your-turn_gfill2 {
     fill: #000;
+}
+
+.winning-message {
+    position: absolute;
+    right: 0;
+    left: 0;
+    background-color: #FFFFFF;
+    border: 3px solid #000000;
+    box-shadow: 0px 10px 0px #000000;
+    border-radius: 20px;
+    width: 285px;
+    max-height: 176px;
+    margin-inline: auto;
+    margin-top: -40px;
+    padding: 17px 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    z-index: 3;
+}
+
+.winner {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: calc(20.42 / 16);
+    margin-bottom: -4px;
+}
+
+.winning-message span:last-of-type {
+    font-size: 56px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: calc(71.46 / 56);
+    padding: 0;
+    margin: 0;
+}
+
+.reset-button {
+    width: 130px;
+    margin-inline: auto;
+}
+
+.winners-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    width: 100%;
 }
