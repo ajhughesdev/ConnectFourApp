@@ -90,40 +90,6 @@ main {
     z-index: 1;
 }
 
-.player-board {
-    position: relative;
-    height: 160px;
-    width: 141px;
-    background-color: #fff;
-    border: 3px solid #000000;
-    box-shadow: 0px 10px 0px #000000;
-    border-radius: 20px;
-    transform: translateY(-30px);
-}
-
-.player-board-img {
-    position: absolute;
-    width: 54px;
-    margin-inline: 42px;
-    transform: translateY(-27px);
-}
-
-.player-board p:first-of-type {
-    text-transform: uppercase;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: calc(25.52 / 20);
-    text-align: center;
-    margin-block: 46px 0;
-}
-
-.player-board p:last-of-type {
-    font-size: 56px;
-    line-height: calc(71.46 / 56);
-    font-weight: 700;
-    text-align: center;
-}
-
 .board-container {
     position: relative;
     width: 632px;
@@ -386,33 +352,6 @@ main {
     }
 }
 
-.your-turn {
-    position: absolute;
-    width: 197px;
-    left: 0;
-    right: 0;
-    margin-inline: auto;
-    margin-top: -40px;
-    z-index: 2;
-}
-
-.your-turn_fill1,
-.player1-fill {
-    fill: #FD6687;
-}
-
-.your-turn_fill2,
-.player2-fill {
-    fill: #FFCE67;
-}
-
-.your-turn_gfill1 {
-    fill: #fff;
-}
-
-.your-turn_gfill2 {
-    fill: #000;
-}
 
 .winning-message {
     position: absolute;
@@ -452,13 +391,4 @@ main {
 .reset-button {
     width: 130px;
     margin-inline: auto;
-}
-
-.winners-bar {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 0;
-    width: 100%;
 }

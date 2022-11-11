@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.ResponseCompression;
+﻿using ConnectFourApp.Server;
+using ConnectFourApp.Server.Data;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -6,12 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
-
-var connectionString = builder.Configuration.GetConnectionString("Default");
-
-builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlServer(connectionString));
 
 var app = builder.Build();
 
@@ -34,7 +34,6 @@ app.UseBlazorFrameworkFiles();
 app.UseStaticFiles();
 
 app.UseRouting();
-
 
 app.MapRazorPages();
 app.MapControllers();

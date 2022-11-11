@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 25.0.1704.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectFourApp.Server", "ConnectFourApp\Server\ConnectFourApp.Server.csproj", "{2C3789B4-5842-4FEE-BB4B-AF4107E3B049}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConnectFourApp.Server", "ConnectFourApp\Server\ConnectFourApp.Server.csproj", "{2C3789B4-5842-4FEE-BB4B-AF4107E3B049}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectFourApp.Client", "ConnectFourApp\Client\ConnectFourApp.Client.csproj", "{DF0E05D8-D18E-4ABB-8764-32593B44BE96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConnectFourApp.Client", "ConnectFourApp\Client\ConnectFourApp.Client.csproj", "{DF0E05D8-D18E-4ABB-8764-32593B44BE96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectFourApp.Shared", "ConnectFourApp\Shared\ConnectFourApp.Shared.csproj", "{C2C550A0-628E-436D-82D1-BD76DC5E051C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConnectFourApp.Shared", "ConnectFourApp\Shared\ConnectFourApp.Shared.csproj", "{C2C550A0-628E-436D-82D1-BD76DC5E051C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

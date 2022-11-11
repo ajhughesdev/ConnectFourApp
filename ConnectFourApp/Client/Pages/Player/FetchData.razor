@@ -1,0 +1,64 @@
+﻿@page "/player"
+@inject HttpClient client
+@inject IJSRuntime js
+
+<h3>Players</h3>
+<small>Add as many players as you wish.</small>
+<div>
+    <a href="player/create">Create New</a>
+</div>
+<br />
+
+@if (players == null)
+{
+    <text>Loading...</text>
+}
+else if (players.Length == 0)
+{
+    <text>No Records Found.</text>
+}
+else
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Initials</th>
+                <th>Score</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Player plyr in players)
+            {
+                <tr>
+                    <td>@plyr.Id</td>
+                    <td>@plyr.Initials</td>
+                    <td>@plyr.Score</td>
+                    <td>
+                        <a href="player/edit/@plyr.Id">Edit</a>
+                        <button @onclick="@(() => Delete(plyr.Id))">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    Player[] players { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        players = await client.GetFromJsonAsync<Player[]>("api/player");
+    }
+
+    async Task Delete(int playerId)
+    {
+        var plyr = players.First(x => x.Id == playerId);
+        if (await js.InvokeAsync<bool>("confirm", $"Do you want to delete {plyr.Initials}'s ({plyr.Id}) Record?"))
+        {
+            await client.DeleteAsync($"api/player/{playerId}");
+            await OnInitializedAsync();
+        }
+    }
+}

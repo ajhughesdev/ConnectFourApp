@@ -1,0 +1,30 @@
+﻿<EditForm Model="@plyr" OnValidSubmit="@OnValidSubmit">
+    <DataAnnotationsValidator />
+    <div>
+        <div>
+            <label>Initials :</label>
+            <div>
+                <InputText @bind-Value="@plyr.Initials" />
+                <ValidationMessage For="@(() => plyr.Initials)" />
+            </div>
+        </div>
+    </div>
+    <div>
+        <div>
+            <label>Score :</label>
+            <div>
+                <InputNumber @bind-Value="@plyr.Score" />
+                <ValidationMessage For="@(() => plyr.Score)" />
+            </div>
+        </div>
+    </div>
+    <button type="submit">@ButtonText</button>
+</EditForm>
+
+@code {
+
+    [Parameter] public Player plyr { get; set; }
+    [Parameter] public string ButtonText { get; set; } = "Save";
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+
+} 

@@ -1,0 +1,34 @@
+﻿
+.player-board {
+    position: relative;
+    height: 160px;
+    width: 141px;
+    background-color: #fff;
+    border: 3px solid #000000;
+    box-shadow: 0px 10px 0px #000000;
+    border-radius: 20px;
+    transform: translateY(-30px);
+}
+
+.player-board-img {
+    position: absolute;
+    width: 54px;
+    margin-inline: 42px;
+    transform: translateY(-27px);
+}
+
+.player-board p:first-of-type {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: calc(25.52 / 20);
+    text-align: center;
+    margin-block: 46px 0;
+}
+
+.player-board p:last-of-type {
+    font-size: 56px;
+    line-height: calc(71.46 / 56);
+    font-weight: 700;
+    text-align: center;
+}

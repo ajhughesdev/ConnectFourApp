@@ -1,0 +1,37 @@
+﻿
+.your-turn {
+    position: absolute;
+    width: 197px;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    margin-top: -40px;
+    z-index: 2;
+}
+
+.your-turn_fill1,
+.player1-fill {
+    fill: #FD6687;
+}
+
+.your-turn_fill2,
+.player2-fill {
+    fill: #FFCE67;
+}
+
+.your-turn_gfill1 {
+    fill: #fff;
+}
+
+.your-turn_gfill2 {
+    fill: #000;
+}
+
+.winners-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    width: 100%;
+}
