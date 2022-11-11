@@ -1,8 +1,3 @@
-.page-container {
-    background: #7945FF;
-    height: 100vh;
-    width: 100vw;
-}
 
 header {
     width: 632px;
@@ -362,9 +357,9 @@ main {
     box-shadow: 0px 10px 0px #000000;
     border-radius: 20px;
     width: 285px;
-    max-height: 176px;
+    height: 166px;
     margin-inline: auto;
-    margin-top: -40px;
+    margin-top: -43px;
     padding: 17px 0;
     display: flex;
     flex-direction: column;

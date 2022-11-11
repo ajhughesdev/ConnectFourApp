@@ -1,0 +1,90 @@
+﻿.rules-container {
+    position: relative;
+    background-color: #7945ff;
+    height: 100vh;
+    width: 100vw;
+}
+
+.rules-board {
+    position: absolute;
+    width: 480px;
+    height: 537px;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid black;
+    background-color: white;
+    border-radius: 40px;
+    box-shadow: 0 10px 0 black;
+    padding-inline: 34px 32px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: calc(71.46 / 56);
+    padding-block: 30px 29px;
+    text-transform: uppercase;
+}
+
+h2 {
+    color: #7945ff;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: calc(25.52 / 20);
+    text-transform: uppercase;
+    padding-block: 0 16px;
+}
+
+p {
+    padding-block: 0 29px;
+}
+
+p, li {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: calc(20.42 / 16);
+    opacity: .66;
+}
+
+ol {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: decimal;
+    list-style-position: inside;
+    counter-reset: count;
+}
+
+ol li {
+    counter-increment: count 1;
+}
+ol li::marker {
+    content: counter(count, decimal) '    ';
+    opacity: 1;
+    color: black;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+span {
+    position: relative;
+    padding-left: 27px;
+
+}
+
+li:last-of-type {
+    padding-right: 0;
+}
+
+svg {
+    width: 70px;
+    position: absolute;
+    margin: 0;
+    bottom: -35px;
+    left: 50%;
+    transform: translate(-50%);
+}

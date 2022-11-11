@@ -26,3 +26,24 @@ html {
 .app {
     width: 100%;
 }
+
+.page-container {
+    background: #7945FF;
+    height: 100vh;
+    width: 100vw;
+}
+
+@media screen and (min-width: 1441px) {
+    .page-container {
+        height: 916px;
+        width: 1446px;
+        border: 3px solid black;
+        box-shadow: 0 10px 0 black;
+        border-radius: 60px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+    }
+}

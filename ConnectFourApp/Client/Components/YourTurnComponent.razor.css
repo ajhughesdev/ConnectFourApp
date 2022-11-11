@@ -5,7 +5,7 @@
     left: 0;
     right: 0;
     margin-inline: auto;
-    margin-top: -40px;
+    margin-top: -43px;
     z-index: 2;
 }
 
@@ -34,4 +34,12 @@
     right: 0;
     z-index: 0;
     width: 100%;
+    height: auto;
+}
+
+@media screen and (min-width: 1441px) {
+    .winners-bar {
+        width: 1440px;
+        border-radius: 0 0 57px 57px;
+    }
 }
