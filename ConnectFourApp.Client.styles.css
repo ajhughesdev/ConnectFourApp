@@ -1,9 +1,4 @@
 /* /Components/BoardComponent.razor.rz.scp.css */
-.page-container[b-wntv24wik3] {
-    background: #7945FF;
-    height: 100vh;
-    width: 100vw;
-}
 
 header[b-wntv24wik3] {
     width: 632px;
@@ -363,9 +358,9 @@ main[b-wntv24wik3] {
     box-shadow: 0px 10px 0px #000000;
     border-radius: 20px;
     width: 285px;
-    max-height: 176px;
+    height: 166px;
     margin-inline: auto;
-    margin-top: -40px;
+    margin-top: -43px;
     padding: 17px 0;
     display: flex;
     flex-direction: column;
@@ -493,7 +488,7 @@ main[b-wntv24wik3] {
     left: 0;
     right: 0;
     margin-inline: auto;
-    margin-top: -40px;
+    margin-top: -43px;
     z-index: 2;
 }
 
@@ -522,4 +517,103 @@ main[b-wntv24wik3] {
     right: 0;
     z-index: 0;
     width: 100%;
+    height: auto;
+}
+
+@media screen and (min-width: 1441px) {
+    .winners-bar[b-8luhvflcsy] {
+        width: 1440px;
+        border-radius: 0 0 57px 57px;
+    }
+}
+/* /Pages/Rules.razor.rz.scp.css */
+.rules-container[b-mpyo9hcvyz] {
+    position: relative;
+    background-color: #7945ff;
+    height: 100vh;
+    width: 100vw;
+}
+
+.rules-board[b-mpyo9hcvyz] {
+    position: absolute;
+    width: 480px;
+    height: 537px;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid black;
+    background-color: white;
+    border-radius: 40px;
+    box-shadow: 0 10px 0 black;
+    padding-inline: 34px 32px;
+}
+
+h1[b-mpyo9hcvyz] {
+    text-align: center;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: calc(71.46 / 56);
+    padding-block: 30px 29px;
+    text-transform: uppercase;
+}
+
+h2[b-mpyo9hcvyz] {
+    color: #7945ff;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: calc(25.52 / 20);
+    text-transform: uppercase;
+    padding-block: 0 16px;
+}
+
+p[b-mpyo9hcvyz] {
+    padding-block: 0 29px;
+}
+
+p[b-mpyo9hcvyz], li[b-mpyo9hcvyz] {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: calc(20.42 / 16);
+    opacity: .66;
+}
+
+ol[b-mpyo9hcvyz] {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: decimal;
+    list-style-position: inside;
+    counter-reset: count;
+}
+
+ol li[b-mpyo9hcvyz] {
+    counter-increment: count 1;
+}
+ol li[b-mpyo9hcvyz]::marker {
+    content: counter(count, decimal) '    ';
+    opacity: 1;
+    color: black;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+span[b-mpyo9hcvyz] {
+    position: relative;
+    padding-left: 27px;
+
+}
+
+li:last-of-type[b-mpyo9hcvyz] {
+    padding-right: 0;
+}
+
+svg[b-mpyo9hcvyz] {
+    width: 70px;
+    position: absolute;
+    margin: 0;
+    bottom: -35px;
+    left: 50%;
+    transform: translate(-50%);
 }
