@@ -1,5 +1,4 @@
 /* /Components/BoardComponent.razor.rz.scp.css */
-
 header[b-wntv24wik3] {
     width: 632px;
     margin-inline: auto;
@@ -19,18 +18,18 @@ nav[b-wntv24wik3] {
 
 button[b-wntv24wik3] {
     padding: 9px 20px 10px 21px;
-    background: #5C2DD5;
+    background: hsl(256, 66%, 50%);
     border-radius: 20px;
     text-transform: uppercase;
     font-weight: 700;
-    color: #fff;
+    color: hsl(0, 0%, 100%);
     font-size: 1rem;
     line-height: calc(20.42 / 16);
     cursor: pointer;
 }
 
 button:hover[b-wntv24wik3] {
-    background-color: #FD6687;
+    background-color: hsl(346, 96%, 69%);
 }
 
 .play-menu[b-wntv24wik3] {
@@ -58,7 +57,7 @@ button:hover[b-wntv24wik3] {
     position: absolute;
     top: 0;
     left: 0;
-    filter: drop-shadow(0 5px 0 black);
+    filter: drop-shadow(0 5px 0 hsl(0, 0%, 0%));
     transform: translateY(-6px);
     z-index: 5;
 }
@@ -133,8 +132,8 @@ main[b-wntv24wik3] {
 .player2[b-wntv24wik3] {
     width: 70px;
     height: 75px;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
     position: absolute;
     display: block;
     background-size: cover;
@@ -153,7 +152,7 @@ main[b-wntv24wik3] {
 
 .column0[b-wntv24wik3],
 .a[b-wntv24wik3] {
-    left: calc(0rem + 17px);
+    left: 17px;
 }
 
 .column1[b-wntv24wik3],
@@ -353,9 +352,9 @@ main[b-wntv24wik3] {
     position: absolute;
     right: 0;
     left: 0;
-    background-color: #FFFFFF;
-    border: 3px solid #000000;
-    box-shadow: 0px 10px 0px #000000;
+    background-color: hsl(0, 0%, 100%);
+    border: 3px solid hsl(0, 0%, 0%);
+    box-shadow: 0 10px 0 hsl(0, 0%, 0%);
     border-radius: 20px;
     width: 285px;
     height: 166px;
@@ -390,16 +389,16 @@ main[b-wntv24wik3] {
 }
 /* /Components/MainMenuComponent.razor.rz.scp.css */
 .main-menu[b-lw6z7hm3q7] {
-  position: absolute;
+    position: absolute;
   top: 50%;
   left: 50%;
   width: 480px;
   height: 435px;
   margin: 0;
   transform: translate(-50%, -50%);
-  background: #7945FF;
-  border: 3px solid #000000;
-  box-shadow: 0px 10px 0px #000000;
+  background: hsl(256, 99%, 63%);
+  border: 3px solid hsl(0, 0%, 0%);
+  box-shadow: 0 10px 0 hsl(0, 0%, 0%);
   border-radius: 40px;
   display: flex;
   flex-direction: column;
@@ -417,8 +416,8 @@ main[b-wntv24wik3] {
   width: 400px;
   height: 72px;
   margin-inline: auto;
-  border: 3px solid #000000;
-  box-shadow: 0px 10px 0px #000000;
+  border: 3px solid hsl(0, 0%, 0%);
+  box-shadow: 0 10px 0 hsl(0, 0%, 0%);
   border-radius: 20px;
   text-transform: uppercase;
   font-size: 24px;
@@ -432,30 +431,123 @@ main[b-wntv24wik3] {
 
 .players:hover[b-lw6z7hm3q7],
 .rules:hover[b-lw6z7hm3q7] {
-  border: 3px solid #5C2DD5;
-  box-shadow: 0 10px 0 #5C2DD5;
+  border: 3px solid hsl(256, 66%, 50%);
+  box-shadow: 0 10px 0 hsl(256, 66%, 50%);
   cursor: pointer;
 }
 
 .players[b-lw6z7hm3q7] {
-  background-color: #FFCE67;
+  background-color: hsl(40, 98%, 70%);
   margin-bottom: 30px;
 }
 
 .rules[b-lw6z7hm3q7] {
-  background-color: #fff;
+  background-color: hsl(0, 0%, 100%);
 }
+/* /Components/ModalComponent.razor.rz.scp.css */
+.imgame-menu-container[b-omfkclek9k] {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+    background-color: hsla(0, 0%, 0%, 0.5);
+}
+
+.ingame-menu[b-omfkclek9k] {
+    box-sizing: content-box;
+    background: hsl(256, 99%, 63%);
+    border: 3px solid hsl(0, 0%, 0%);
+    box-shadow: 0 10px 0 hsl(0, 0%, 0%);
+    border-radius: 40px;
+    width: 481px;
+    height: 491px;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -48%);
+    z-index: 100;
+}
+
+h1[b-omfkclek9k] {
+    text-align: center;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: calc(71.46 / 56);
+    padding-block: 50px 44px;
+    text-transform: uppercase;
+    color: hsl(0, 0%, 100%);
+}
+
+.buttons[b-omfkclek9k] {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+    align-items: center;
+
+}
+
+button[b-omfkclek9k], a[b-omfkclek9k] {
+    width: 400px;
+    height: 72px;
+    border: 3px solid hsl(0, 0%, 0%);
+    box-shadow: 0 10px 0 hsl(0, 0%, 0%);
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: calc(30.62 / 24);
+    padding: 20px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 31px;
+    color: hsl(0, 0%, 0%);
+}
+
+button[b-omfkclek9k] {
+    background-color: hsl(0, 0%, 100%);
+}
+
+a[b-omfkclek9k] {
+    background-color: hsl(346, 96%, 69%);
+}
+
+button:hover[b-omfkclek9k], a:hover[b-omfkclek9k] {
+    border: 3px solid hsl(256, 66%, 50%);
+    box-shadow: 0 10px 0 hsl(256, 66%, 50%);
+    cursor: pointer;
+}
+
+span[b-omfkclek9k] {
+    margin-inline: auto;
+}
+
+/* .fade-in {
+    animation: 300ms ease-out 0;
+}
+
+.fade-out {
+    animation: 300ms ease-out 0;
+    opacity: 0;
+} */
 /* /Components/PlayerScoreBoardComponent.razor.rz.scp.css */
 
 .player-board[b-6450ydrzvj] {
     position: relative;
     height: 160px;
     width: 141px;
-    background-color: #fff;
-    border: 3px solid #000000;
-    box-shadow: 0px 10px 0px #000000;
+    background-color: hsl(0, 0%, 100%);
+    border: 3px solid hsl(0, 0%, 0%);
+    box-shadow: 0 10px 0 hsl(0, 0%, 0%);
     border-radius: 20px;
-    transform: translateY(-30px);
+    transform: translateY(-18px);
 }
 
 .player-board-img[b-6450ydrzvj] {
@@ -529,7 +621,7 @@ main[b-wntv24wik3] {
 /* /Pages/Rules.razor.rz.scp.css */
 .rules-container[b-mpyo9hcvyz] {
     position: relative;
-    background-color: #7945ff;
+    background-color: hsl(256, 99%, 63%);
     height: 100vh;
     width: 100vw;
 }
@@ -542,10 +634,10 @@ main[b-wntv24wik3] {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 3px solid black;
-    background-color: white;
+    border: 3px solid hsl(0, 0%, 0%);
+    background-color: hsl(0, 0%, 100%);
     border-radius: 40px;
-    box-shadow: 0 10px 0 black;
+    box-shadow: 0 10px 0 hsl(0, 0%, 0%);
     padding-inline: 34px 32px;
 }
 
@@ -559,7 +651,7 @@ h1[b-mpyo9hcvyz] {
 }
 
 h2[b-mpyo9hcvyz] {
-    color: #7945ff;
+    color: hsl(256, 99%, 63%);
     font-size: 20px;
     font-weight: 700;
     line-height: calc(25.52 / 20);
@@ -611,9 +703,20 @@ li:last-of-type[b-mpyo9hcvyz] {
 
 svg[b-mpyo9hcvyz] {
     width: 70px;
+    height: 70px;
     position: absolute;
     margin: 0;
     bottom: -35px;
     left: 50%;
     transform: translate(-50%);
+    filter: drop-shadow(0 5px 0 hsl(0, 0%, 0%));
+    border-radius: 50%;
 }
+
+    svg:hover .rules-fill[b-mpyo9hcvyz] {
+        fill: hsl(256, 66%, 50%);
+    }
+
+    svg:hover[b-mpyo9hcvyz] {
+        filter: drop-shadow(0 5px 0 hsl(256, 66%, 50%));
+    }
