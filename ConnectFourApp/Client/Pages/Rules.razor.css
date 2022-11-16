@@ -1,6 +1,6 @@
 ﻿.rules-container {
     position: relative;
-    background-color: #7945ff;
+    background-color: hsl(256, 99%, 63%);
     height: 100vh;
     width: 100vw;
 }
@@ -13,10 +13,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 3px solid black;
-    background-color: white;
+    border: 3px solid hsl(0, 0%, 0%);
+    background-color: hsl(0, 0%, 100%);
     border-radius: 40px;
-    box-shadow: 0 10px 0 black;
+    box-shadow: 0 10px 0 hsl(0, 0%, 0%);
     padding-inline: 34px 32px;
 }
 
@@ -30,7 +30,7 @@ h1 {
 }
 
 h2 {
-    color: #7945ff;
+    color: hsl(256, 99%, 63%);
     font-size: 20px;
     font-weight: 700;
     line-height: calc(25.52 / 20);
@@ -82,9 +82,20 @@ li:last-of-type {
 
 svg {
     width: 70px;
+    height: 70px;
     position: absolute;
     margin: 0;
     bottom: -35px;
     left: 50%;
     transform: translate(-50%);
+    filter: drop-shadow(0 5px 0 hsl(0, 0%, 0%));
+    border-radius: 50%;
 }
+
+    svg:hover .rules-fill {
+        fill: hsl(256, 66%, 50%);
+    }
+
+    svg:hover {
+        filter: drop-shadow(0 5px 0 hsl(256, 66%, 50%));
+    }

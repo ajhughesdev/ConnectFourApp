@@ -25,4 +25,8 @@
   <ItemGroup>
     <None Remove="Components\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
 </Project>

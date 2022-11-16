@@ -1,8 +1,5 @@
-﻿using ConnectFourApp.Server;
-using ConnectFourApp.Server.Data;
-using Microsoft.AspNetCore.ResponseCompression;
+﻿using ConnectFourApp.Server.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,11 +1,11 @@
-﻿<EditForm Model="@plyr" OnValidSubmit="@OnValidSubmit">
+﻿<EditForm Model="@Player" OnValidSubmit="@OnValidSubmit">
     <DataAnnotationsValidator />
     <div>
         <div>
             <label>Initials :</label>
             <div>
-                <InputText @bind-Value="@plyr.Initials" />
-                <ValidationMessage For="@(() => plyr.Initials)" />
+                <InputText @bind-Value="@Player.Initials" />
+                <ValidationMessage For="@(() => Player.Initials)" />
             </div>
         </div>
     </div>
@@ -13,8 +13,8 @@
         <div>
             <label>Score :</label>
             <div>
-                <InputNumber @bind-Value="@plyr.Score" />
-                <ValidationMessage For="@(() => plyr.Score)" />
+                <InputNumber @bind-Value="@Player.Score" />
+                <ValidationMessage For="@(() => Player.Score)" />
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
 
 @code {
 
-    [Parameter] public Player plyr { get; set; }
+    [Parameter] public Player Player { get; set; }
     [Parameter] public string ButtonText { get; set; } = "Save";
     [Parameter] public EventCallback OnValidSubmit { get; set; }
 

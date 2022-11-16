@@ -1,14 +1,14 @@
 .main-menu {
-  position: absolute;
+    position: absolute;
   top: 50%;
   left: 50%;
   width: 480px;
   height: 435px;
   margin: 0;
   transform: translate(-50%, -50%);
-  background: #7945FF;
-  border: 3px solid #000000;
-  box-shadow: 0px 10px 0px #000000;
+  background: hsl(256, 99%, 63%);
+  border: 3px solid hsl(0, 0%, 0%);
+  box-shadow: 0 10px 0 hsl(0, 0%, 0%);
   border-radius: 40px;
   display: flex;
   flex-direction: column;
@@ -26,8 +26,8 @@
   width: 400px;
   height: 72px;
   margin-inline: auto;
-  border: 3px solid #000000;
-  box-shadow: 0px 10px 0px #000000;
+  border: 3px solid hsl(0, 0%, 0%);
+  box-shadow: 0 10px 0 hsl(0, 0%, 0%);
   border-radius: 20px;
   text-transform: uppercase;
   font-size: 24px;
@@ -41,16 +41,16 @@
 
 .players:hover,
 .rules:hover {
-  border: 3px solid #5C2DD5;
-  box-shadow: 0 10px 0 #5C2DD5;
+  border: 3px solid hsl(256, 66%, 50%);
+  box-shadow: 0 10px 0 hsl(256, 66%, 50%);
   cursor: pointer;
 }
 
 .players {
-  background-color: #FFCE67;
+  background-color: hsl(40, 98%, 70%);
   margin-bottom: 30px;
 }
 
 .rules {
-  background-color: #fff;
+  background-color: hsl(0, 0%, 100%);
 }

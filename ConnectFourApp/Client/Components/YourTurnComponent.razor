@@ -1,4 +1,7 @@
-﻿<div class="your-turn">
+﻿@using System.Timers;
+@implements IDisposable;
+
+<div class="your-turn">
 
     <svg width="197" height="165" viewBox="0 0 197 165" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g filter="url(#filter0_d_5_5704)">
@@ -20,7 +23,7 @@
                 <tspan x="1.64" y="16">PLAYER @(PlayerFill)'S TURN</tspan>
             </text>
             <text font-size="56" transform="translate(51 41)">
-                <tspan x=".872" y="77">30s</tspan>
+                <tspan x=".872" y="77">@($"{Time}s")</tspan>
             </text>
         </g>
     </svg>
@@ -34,9 +37,59 @@
 
 @code {
 
-    [Parameter]
-    public Object PlayerFill { get; set; }
+    [Parameter] public object PlayerFill { get; set; }
 
-    [Parameter]
-    public string Winner { get; set; }
+    [Parameter] public string Winner { get; set; }
+
+    [Parameter] public EventCallback TimerOut { get; set; }
+
+    private Timer _timer = null!;
+    private int _counter = 0;
+
+    protected string Time { get; set; } = "00";
+
+    public void Start(int counter)
+    {
+        _counter = counter;
+
+        if (_counter <= 0) return;
+
+        Time = TimeSpan.FromSeconds(_counter).ToString(@"ss");
+        StateHasChanged();
+        _timer.Start();
+    }
+
+    public void Stop()
+    {
+        _timer.Stop();
+    }
+
+    protected override void OnInitialized()
+    {
+        _timer = new Timer(1000);
+        _timer.Elapsed += OnTimedEvent;
+        _timer.AutoReset = true;
+    }
+
+    private async void OnTimedEvent(object sender, ElapsedEventArgs e)
+    {
+        _counter--;
+
+        await InvokeAsync(() =>
+        {
+            Time = TimeSpan.FromSeconds(_counter).ToString(@"ss");
+            StateHasChanged();
+        });
+
+        if (_counter > 0) return;
+
+        _timer.Stop();
+        await TimerOut.InvokeAsync();
+    }
+
+    public void Dispose()
+    {
+        _timer.Dispose();
+    }
+
 }

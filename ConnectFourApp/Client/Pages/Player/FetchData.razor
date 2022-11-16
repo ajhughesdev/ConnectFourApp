@@ -1,6 +1,6 @@
 ﻿@page "/player"
-@inject HttpClient client
-@inject IJSRuntime js
+@inject HttpClient Client
+@inject IJSRuntime Js
 
 <h3>Players</h3>
 <small>Add as many players as you wish.</small>
@@ -9,11 +9,11 @@
 </div>
 <br />
 
-@if (players == null)
+@if (Players == null)
 {
     <text>Loading...</text>
 }
-else if (players.Length == 0)
+else if (Players.Length == 0)
 {
     <text>No Records Found.</text>
 }
@@ -29,15 +29,15 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (Player plyr in players)
+            @foreach (var player in Players)
             {
                 <tr>
-                    <td>@plyr.Id</td>
-                    <td>@plyr.Initials</td>
-                    <td>@plyr.Score</td>
+                    <td>@player.Id</td>
+                    <td>@player.Initials</td>
+                    <td>@player.Score</td>
                     <td>
-                        <a href="https://ajhughesdev.github.io/ConnectFourApp/player/edit/@plyr.Id">Edit</a>
-                        <button @onclick="@(() => Delete(plyr.Id))">Delete</button>
+                        <a href="https://ajhughesdev.github.io/ConnectFourApp/player/edit/@player.Id">Edit</a>
+                        <button @onclick="@(() => Delete(player.Id))">Delete</button>
                     </td>
                 </tr>
             }
@@ -46,18 +46,18 @@ else
 }
 
 @code {
-    Player[] players { get; set; }
+    Player[] Players { get; set; }
     protected override async Task OnInitializedAsync()
     {
-        players = await client.GetFromJsonAsync<Player[]>("api/player");
+        Players = await Client.GetFromJsonAsync<Player[]>("api/player");
     }
 
     async Task Delete(int playerId)
     {
-        var plyr = players.First(x => x.Id == playerId);
-        if (await js.InvokeAsync<bool>("confirm", $"Do you want to delete {plyr.Initials}'s ({plyr.Id}) Record?"))
+        var player = Players.First(x => x.Id == playerId);
+        if (await Js.InvokeAsync<bool>("confirm", $"Do you want to delete {player.Initials}'s ({player.Id}) Record?"))
         {
-            await client.DeleteAsync($"api/player/{playerId}");
+            await Client.DeleteAsync($"api/player/{playerId}");
             await OnInitializedAsync();
         }
     }

@@ -1,0 +1,92 @@
+﻿.imgame-menu-container {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+    background-color: hsla(0, 0%, 0%, 0.5);
+}
+
+.ingame-menu {
+    box-sizing: content-box;
+    background: hsl(256, 99%, 63%);
+    border: 3px solid hsl(0, 0%, 0%);
+    box-shadow: 0 10px 0 hsl(0, 0%, 0%);
+    border-radius: 40px;
+    width: 481px;
+    height: 491px;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -48%);
+    z-index: 100;
+}
+
+h1 {
+    text-align: center;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: calc(71.46 / 56);
+    padding-block: 50px 44px;
+    text-transform: uppercase;
+    color: hsl(0, 0%, 100%);
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+    align-items: center;
+
+}
+
+button, a {
+    width: 400px;
+    height: 72px;
+    border: 3px solid hsl(0, 0%, 0%);
+    box-shadow: 0 10px 0 hsl(0, 0%, 0%);
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: calc(30.62 / 24);
+    padding: 20px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 31px;
+    color: hsl(0, 0%, 0%);
+}
+
+button {
+    background-color: hsl(0, 0%, 100%);
+}
+
+a {
+    background-color: hsl(346, 96%, 69%);
+}
+
+button:hover, a:hover {
+    border: 3px solid hsl(256, 66%, 50%);
+    box-shadow: 0 10px 0 hsl(256, 66%, 50%);
+    cursor: pointer;
+}
+
+span {
+    margin-inline: auto;
+}
+
+/* .fade-in {
+    animation: 300ms ease-out 0;
+}
+
+.fade-out {
+    animation: 300ms ease-out 0;
+    opacity: 0;
+} */

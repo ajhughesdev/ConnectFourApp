@@ -1,4 +1,3 @@
-
 header {
     width: 632px;
     margin-inline: auto;
@@ -18,18 +17,18 @@ nav {
 
 button {
     padding: 9px 20px 10px 21px;
-    background: #5C2DD5;
+    background: hsl(256, 66%, 50%);
     border-radius: 20px;
     text-transform: uppercase;
     font-weight: 700;
-    color: #fff;
+    color: hsl(0, 0%, 100%);
     font-size: 1rem;
     line-height: calc(20.42 / 16);
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #FD6687;
+    background-color: hsl(346, 96%, 69%);
 }
 
 .play-menu {
@@ -57,7 +56,7 @@ button:hover {
     position: absolute;
     top: 0;
     left: 0;
-    filter: drop-shadow(0 5px 0 black);
+    filter: drop-shadow(0 5px 0 hsl(0, 0%, 0%));
     transform: translateY(-6px);
     z-index: 5;
 }
@@ -132,8 +131,8 @@ main {
 .player2 {
     width: 70px;
     height: 75px;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
     position: absolute;
     display: block;
     background-size: cover;
@@ -152,7 +151,7 @@ main {
 
 .column0,
 .a {
-    left: calc(0rem + 17px);
+    left: 17px;
 }
 
 .column1,
@@ -352,9 +351,9 @@ main {
     position: absolute;
     right: 0;
     left: 0;
-    background-color: #FFFFFF;
-    border: 3px solid #000000;
-    box-shadow: 0px 10px 0px #000000;
+    background-color: hsl(0, 0%, 100%);
+    border: 3px solid hsl(0, 0%, 0%);
+    box-shadow: 0 10px 0 hsl(0, 0%, 0%);
     border-radius: 20px;
     width: 285px;
     height: 166px;

@@ -1,5 +1,6 @@
-@inject ConnectFourApp.Client.Shared.State State
+@inject State State
 @using ConnectFourApp.Client.Components
+@using ConnectFourApp.Client.Services
 
 <div class="page-container">
 
@@ -37,7 +38,7 @@
 
             @for (var i = 0; i < 42; i++)
             {
-                <span class="@Chips[i]"></span>
+                <span class="@_chips[i]"></span>
             }
 
             <img src="./assets/images/board-layer-white-large.svg" class="board-layer_white" alt="" />
@@ -47,10 +48,10 @@
 
     </main>
 
-    <YourTurnComponent PlayerFill=@State.CurrentPlayer Winner=@Winner />
+    <YourTurnComponent @ref="_timer" TimerOut="@TimesUp" PlayerFill="@State.CurrentPlayer" Winner="@_winner" />
 
     <div class="winning-message" style="@ResetWinner">
-        <span class="winner">@($"PLAYER {Winner}")</span>
+        <span class="winner">@($"PLAYER {_winner}")</span>
         <span>wins</span>
         <button class="reset-button" @onclick="@ResetGame">play again</button>
     </div>
@@ -59,49 +60,68 @@
 
 @code {
 
-    private string[] Chips = new string[42];
+    private string[] _chips = new string[42];
 
-    private string Winner = string.Empty;
+    private string _winner = string.Empty;
 
-    private string ErrorMessage = string.Empty;
+    private string _errorMessage = string.Empty;
 
-    private string ResetWinner => (Winner == string.Empty) ? "display: none;" : "";
+    private string ResetWinner => (_winner == string.Empty) ? "display: none;" : "";
 
     protected override void OnInitialized()
     {
         State.ResetBoard();
     }
 
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            _timer.Start(30);
+        }
+    }
+
+    private YourTurnComponent _timer;
+
     private void PlayPiece(byte column)
     {
-        ErrorMessage = string.Empty;
+        _errorMessage = string.Empty;
 
         try
         {
             var playedCell = State.PlayPiece(column);
             var addCssClass = $"player{State.CurrentPlayer} column{column} drop{playedCell}";
-            Chips[State.CurrentTurn - 1] = addCssClass;
+            _chips[State.CurrentTurn - 1] = addCssClass;
+
+            _timer.Start(30);
         }
         catch (ArgumentException ex)
         {
-            ErrorMessage = ex.Message;
+            _errorMessage = ex.Message;
         }
 
-        Winner = State.CheckForWin() switch
+        _winner = State.CheckForWin() switch
         {
-            State.WinState.Player1_Wins => "1",
-            State.WinState.Player2_Wins => "2",
+            State.WinState.Player1Wins => "1",
+            State.WinState.Player2Wins => "2",
             State.WinState.Draw => "TIE",
             _ => ""
         };
     }
 
+    void TimesUp()
+    {
+        Console.WriteLine("Times Up!");
+    }
+
     void ResetGame()
     {
         State.ResetBoard();
-        Winner = string.Empty;
-        ErrorMessage = string.Empty;
-        Chips = new string[42];
+        _winner = string.Empty;
+        _errorMessage = string.Empty;
+        _chips = new string[42];
+
+        _timer.Start(30);
     }
 
 }

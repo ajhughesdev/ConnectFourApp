@@ -1,4 +1,4 @@
-﻿namespace ConnectFourApp.Client.Shared
+﻿namespace ConnectFourApp.Client.Services
 {
 
     public class State
@@ -10,26 +10,26 @@
 
         public enum WinState
         {
-            No_Winner = 0,
-            Player1_Wins = 1,
-            Player2_Wins = 2,
+            NoWinner = 0,
+            Player1Wins = 1,
+            Player2Wins = 2,
             Draw = 3
         }
-
+        
         public int CurrentPlayer => GameBoard.Count(x => x != 0) % 2 + 1;
 
         public int CurrentTurn { get { return GameBoard.Count(x => x != 0); } }
 
-        public static readonly List<int[]> WinningCells = new();
+        private static readonly List<int[]> WinningCells = new();
 
-        public static void CalculateWinningCells()
+        private static void CalculateWinningCells()
         {
             for (byte row = 0; row < 6; row++)
             {
 
-                byte rowColumn1 = (byte)(row * 7);
-                byte rowColumn7 = (byte)((row + 1) * 7 - 1);
-                byte checkColumn = rowColumn1;
+                var rowColumn1 = (byte)(row * 7);
+                var rowColumn7 = (byte)((row + 1) * 7 - 1);
+                var checkColumn = rowColumn1;
                 while (checkColumn <= rowColumn7 - 3)
                 {
                     WinningCells.Add(new int[] {
@@ -45,10 +45,8 @@
 
             for (byte column = 0; column < 7; column++)
             {
-
-                byte columnRow1 = column;
-                byte columnRow7 = (byte)(35 + column);
-                byte checkRow = columnRow1;
+                _ = (byte)(35 + column);
+                var checkRow = column;
                 while (checkRow <= 14 + column)
                 {
                     WinningCells.Add(new int[] {
@@ -65,9 +63,9 @@
             for (byte column = 0; column < 4; column++)
             {
 
-                byte columnRow1 = (byte)(21 + column);
-                byte columnRow7 = (byte)(35 + column);
-                byte checkPosition = columnRow1;
+                var columnRow1 = (byte)(21 + column);
+                var columnRow7 = (byte)(35 + column);
+                var checkPosition = columnRow1;
                 while (checkPosition <= columnRow7)
                 {
                     WinningCells.Add(new int[] {
@@ -84,9 +82,9 @@
             for (byte column = 0; column < 4; column++)
             {
 
-                byte columnRow1 = (byte)(0 + column);
-                byte columnRow7 = (byte)(14 + column);
-                byte checkPosition = columnRow1;
+                var columnRow1 = (byte)(0 + column);
+                var columnRow7 = (byte)(14 + column);
+                var checkPosition = columnRow1;
                 while (checkPosition <= columnRow7)
                 {
                     WinningCells.Add(new int[] {
@@ -104,23 +102,19 @@
 
         public WinState CheckForWin()
         {
-            if (GameBoard.Count(x => x != 0) < 7) return WinState.No_Winner;
+            if (GameBoard.Count(x => x != 0) < 7) return WinState.NoWinner;
 
-            foreach (var option in WinningCells)
+            foreach (var option in WinningCells.Where(option => GameBoard[option[0]] != 0).Where(option => GameBoard[option[0]] ==
+                         GameBoard[option[1]] &&
+                         GameBoard[option[1]] ==
+                         GameBoard[option[2]] &&
+                         GameBoard[option[2]] ==
+                         GameBoard[option[3]]))
             {
-                if (GameBoard[option[0]] == 0) continue;
-
-                if (GameBoard[option[0]] ==
-                    GameBoard[option[1]] &&
-                    GameBoard[option[1]] ==
-                    GameBoard[option[2]] &&
-                    GameBoard[option[2]] ==
-                    GameBoard[option[3]]) return (WinState)GameBoard[option[0]];
+                return (WinState)GameBoard[option[0]];
             }
 
-            if (GameBoard.Count(x => x != 0) == 42) return WinState.Draw;
-
-            return WinState.No_Winner;
+            return GameBoard.Count(x => x != 0) == 42 ? WinState.Draw : WinState.NoWinner;
         }
 
         public byte PlayPiece(int column)
@@ -142,14 +136,14 @@
 
         }
 
-        public List<int> GameBoard { get; private set; } = new List<int>(new int[42]);
+        private List<int> GameBoard { get; set; } = new(new int[42]);
 
         public void ResetBoard()
         {
             GameBoard = new List<int>(new int[42]);
         }
 
-        private byte ConvertPlayedCellToRow(int playedCell) => (byte)(Math.Floor(playedCell / (decimal)7) + 1);
+        private static byte ConvertPlayedCellToRow(int playedCell) => (byte)(Math.Floor(playedCell / (decimal)7) + 1);
 
     }
 }
