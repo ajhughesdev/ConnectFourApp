@@ -4,8 +4,8 @@ This is a work-in-progress solution to the [Connect Four game](https://www.front
 
 #### Feature's List
 
-- a CRUD API including Entity Framework Core
+1. A CRUD API using the Entity Framework Core inluding a [form]("https://ajhughesdev.githubio/ConnectFourApp") whose input values of initials and score are saved to a localhost database and can be edited and deleted 
 
-`"/players"` consists of a form whose input values of initials and score are saved to a localhost database and can be edited and deleted 
+2. Asychronous when using the `HttpClient` service to consume a web API
 
-- asychronous when using the `HttpClient` service to consume a web API
+3. 
