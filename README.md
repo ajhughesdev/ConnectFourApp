@@ -8,4 +8,4 @@ This is a work-in-progress solution to the [Connect Four game](https://www.front
 
 2. Asychronous when using the `HttpClient` service to consume a web API
 
-3. 
+3. A List populated with a retrievable value representing every playable space on the board and used for various dynamic UI elements throughout game play
