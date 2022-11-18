@@ -11,3 +11,5 @@ This is a work-in-progress solution to the [Connect Four game](https://www.front
 3. A List populated with a retrievable value representing every playable space on the board and used for various dynamic UI elements throughout game play
 
 This it has been an interesting process to write the logic testing for win conditions while simultaneously attempting to implement several expected UI/UX elements. I've gained experience in writing services and learned of the importance of memory management.
+
+In addition to the list of features included with the challenge, I want to include a "high scores" component that can display player's initials and their overall wins on the screen between rounds of competition.
