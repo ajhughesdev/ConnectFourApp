@@ -4,7 +4,7 @@
 
 namespace ConnectFourApp.Server.Migrations
 {
-    public partial class NotInitial : Migration
+    public partial class Downgrade : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

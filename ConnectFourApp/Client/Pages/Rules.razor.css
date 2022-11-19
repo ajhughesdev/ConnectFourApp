@@ -38,9 +38,7 @@ h2 {
     padding-block: 0 16px;
 }
 
-p {
-    padding-block: 0 29px;
-}
+p { padding-block: 0 29px; }
 
 p, li {
     font-size: 16px;
@@ -59,9 +57,8 @@ ol {
     counter-reset: count;
 }
 
-ol li {
-    counter-increment: count 1;
-}
+ol li { counter-increment: count 1; }
+
 ol li::marker {
     content: counter(count, decimal) '    ';
     opacity: 1;
@@ -73,12 +70,9 @@ ol li::marker {
 span {
     position: relative;
     padding-left: 27px;
-
 }
 
-li:last-of-type {
-    padding-right: 0;
-}
+li:last-of-type { padding-right: 0; }
 
 svg {
     width: 70px;
@@ -92,10 +86,6 @@ svg {
     border-radius: 50%;
 }
 
-    svg:hover .rules-fill {
-        fill: hsl(256, 66%, 50%);
-    }
+svg:hover .rules-fill { fill: hsl(256, 66%, 50%); }
 
-    svg:hover {
-        filter: drop-shadow(0 5px 0 hsl(256, 66%, 50%));
-    }
+svg:hover { filter: drop-shadow(0 5px 0 hsl(256, 66%, 50%)); }

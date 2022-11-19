@@ -1,56 +1,52 @@
 .main-menu {
     position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 480px;
-  height: 435px;
-  margin: 0;
-  transform: translate(-50%, -50%);
-  background: hsl(256, 99%, 63%);
-  border: 3px solid hsl(0, 0%, 0%);
-  box-shadow: 0 10px 0 hsl(0, 0%, 0%);
-  border-radius: 40px;
-  display: flex;
-  flex-direction: column;
+    top: 50%;
+    left: 50%;
+    width: 480px;
+    height: 435px;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    background: hsl(256, 99%, 63%);
+    border: 3px solid hsl(0, 0%, 0%);
+    box-shadow: 0 10px 0 hsl(0, 0%, 0%);
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
 }
 
 .main-menu-logo {
-  margin: auto;
-  height: 61px;
-  width: 58px;
-  margin-block: 70px 79px;
+    margin: auto;
+    height: 61px;
+    width: 58px;
+    margin-block: 70px 79px;
 }
 
-.players,
-.rules {
-  width: 400px;
-  height: 72px;
-  margin-inline: auto;
-  border: 3px solid hsl(0, 0%, 0%);
-  box-shadow: 0 10px 0 hsl(0, 0%, 0%);
-  border-radius: 20px;
-  text-transform: uppercase;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: calc(30.62 / 24);
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between
+.players, .rules {
+    width: 400px;
+    height: 72px;
+    margin-inline: auto;
+    border: 3px solid hsl(0, 0%, 0%);
+    box-shadow: 0 10px 0 hsl(0, 0%, 0%);
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: calc(30.62 / 24);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
 }
 
-.players:hover,
-.rules:hover {
-  border: 3px solid hsl(256, 66%, 50%);
-  box-shadow: 0 10px 0 hsl(256, 66%, 50%);
-  cursor: pointer;
+.players:hover, .rules:hover {
+    border: 3px solid hsl(256, 66%, 50%);
+    box-shadow: 0 10px 0 hsl(256, 66%, 50%);
+    cursor: pointer;
 }
 
 .players {
-  background-color: hsl(40, 98%, 70%);
-  margin-bottom: 30px;
+    background-color: hsl(40, 98%, 70%);
+    margin-bottom: 30px;
 }
 
-.rules {
-  background-color: hsl(0, 0%, 100%);
-}
+.rules { background-color: hsl(0, 0%, 100%); }

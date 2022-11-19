@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ConnectFourApp.Server.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221114234006_NotInitial")]
-    partial class NotInitial
+    [Migration("20221118152126_Downgrade")]
+    partial class Downgrade
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

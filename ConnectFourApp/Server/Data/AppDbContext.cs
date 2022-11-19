@@ -7,8 +7,8 @@ namespace ConnectFourApp.Server.Data
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-
         }
+
         public DbSet<Player> Players { get; set; }
     }
 }

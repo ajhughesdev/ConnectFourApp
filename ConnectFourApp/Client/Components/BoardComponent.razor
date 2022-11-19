@@ -7,7 +7,7 @@
     <header>
         <nav class="nav-menu">
             <button type="button">menu</button>
-            <img src="./assets/images/logo.svg" alt="logo" class="logo" />
+            <img src="./assets/images/logo.svg" alt="logo" class="logo"/>
             <button @onclick="@ResetGame">restart</button>
         </nav>
     </header>
@@ -23,15 +23,17 @@
     </div>
 
     <main>
-    
-        <PlayerScoreBoardComponent PlayerNum="1" ImgSrc="./assets/images/player-one.svg" />
+
+        <PlayerScoreBoardComponent PlayerNum="1" ImgSrc="./assets/images/player-one.svg"/>
 
         <div class="board-container">
-            <img src="./assets/images/board-layer-black-large.svg" class="board-layer_black" alt="" />
+            <img src="./assets/images/board-layer-black-large.svg" class="board-layer_black" alt=""/>
             <div class="board">
                 @for (var i = 0; i < 42; i++)
                 {
-                    <span class="board-cell"><span></span></span>
+                    <span class="board-cell">
+                        <span></span>
+                    </span>
                 }
 
             </div>
@@ -41,14 +43,14 @@
                 <span class="@_chips[i]"></span>
             }
 
-            <img src="./assets/images/board-layer-white-large.svg" class="board-layer_white" alt="" />
+            <img src="./assets/images/board-layer-white-large.svg" class="board-layer_white" alt=""/>
         </div>
 
-        <PlayerScoreBoardComponent PlayerNum="2" ImgSrc="./assets/images/player-two.svg" />
+        <PlayerScoreBoardComponent PlayerNum="2" ImgSrc="./assets/images/player-two.svg"/>
 
     </main>
 
-    <YourTurnComponent @ref="_timer" TimerOut="@TimesUp" PlayerFill="@State.CurrentPlayer" Winner="@_winner" />
+    <YourTurnComponent @ref="_timer" TimerOut="@TimesUp" PlayerFill="@State.CurrentPlayer" Winner="@_winner"/>
 
     <div class="winning-message" style="@ResetWinner">
         <span class="winner">@($"PLAYER {_winner}")</span>
@@ -106,7 +108,7 @@
             State.WinState.Player2Wins => "2",
             State.WinState.Draw => "TIE",
             _ => ""
-        };
+            };
     }
 
     void TimesUp()
