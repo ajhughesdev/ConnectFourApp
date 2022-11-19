@@ -1,15 +1,81 @@
+
 # Connect Four App
 
-This is a work-in-progress solution to the [Connect Four game](https://www.frontendmentor.io/challenges/connect-four-game-6G8QVH923s/hub/connect-four-game-64jxPwTzw3 "Frontend Mentor | Connect Four game hub") challenge on FrontendMentor.io - a hosted Blazor WebAssembly app.
+This is a work-in-progress solution to the [Connect Four game](https://www.frontendmentor.io/challenges/connect-four-game-6G8QVH923s) challenge on FrontendMentor.io - a hosted Blazor WebAssembly app.
 
-#### Feature's List
 
-1. A CRUD API using the Entity Framework Core inluding a [form](https://ajhughesdev.githubio/ConnectFourApp) whose input values of initials and score are saved to a localhost database and can be edited and deleted 
+## Features
 
-2. Asychronous when using the `HttpClient` service to consume a web API
+> Make your application a **CRUD API**
 
-3. A List populated with a retrievable value representing every playable space on the board and used for various dynamic UI elements throughout game play
+A **CRUD API** using the Entity Framework Core inluding a [form](https://ajhughesdev.github.io/ConnectFourApp/player) whose input values of initials and score are saved to a localhost database and can be edited and deleted
 
-This it has been an interesting process to write the logic testing for win conditions while simultaneously attempting to implement several expected UI/UX elements. I've gained experience in writing services and learned of the importance of memory management.
+> Make your application **asynchronous**
 
-In addition to the list of features included with the challenge, I want to include a "high scores" component that can display player's initials and their overall wins on the screen between rounds of competition.
+**Asychronous** when using the HttpClient service to consume a web API
+
+> Create a dictionary or **list**, populate it with several values, retrieve at least one value, and use it in your program
+
+A **List** populated with a retrievable value representing every playable space on the board and used for various dynamic UI elements throughout game play
+
+
+## API Reference
+
+#### Get all reservations
+
+```csharp
+[HttpGet]
+public Task<IActionResult> Get()
+in class PlayerController
+```
+
+#### Get reservation by "Id"
+
+```csharp
+[HttpGet("{id}")]
+public Task<IActionResult> Get(int id)
+in class PlayerController
+```
+
+#### Create reservation
+
+```csharp
+[HttpPost]
+public Task<IActionResult> Put(Player player)
+in class PlayerController
+```
+
+#### Edit reservation
+
+```csharp
+[HttpPut]
+public Task<IActionResult> Put(Player player)
+in class PlayerController
+```
+
+#### Delete reservation by "Id"
+
+```csharp
+[HttpDelete("{id}")]
+public Task<IActionResult> Delete(int id)
+in class PlayerController
+```
+
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `Id`      | `int`    | **Key** Id of player              |  
+| `Initials`| `string` | **Required** Initials of player   |
+| `Score`   | `int`    | **Required** Score of player      |
+
+## Authors
+
+- [@ajhughesdev](https://www.github.com/ajhughesdev)
+
+
+## Acknowledgements
+
+ - [Intro to Web Development with .NET](https://github.com/dotnet/intro-to-dotnet-web-dev)
+ - [readme.so](https://github.com/octokatherine/readme.so)
+ - [Blazor WebAssembly : Call Web APIs to perform CRUD](https://www.yogihosting.com/blazor-webassembly-web-api-crud/)
+
