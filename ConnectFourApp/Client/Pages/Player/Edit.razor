@@ -3,16 +3,24 @@
 @inject NavigationManager UriHelper
 @inject IJSRuntime Js
 
-<h3>Edit</h3>
+<div class="form-container">
+    <div class="form-menu-create">
+        <h1 class="form-title">Edit</h1>
 
-<Form ButtonText="Update" Player="_player"
-      OnValidSubmit="@EditPlayer"></Form>
+        <Form ButtonText="Update" Player="_player"
+              OnValidSubmit="@EditPlayer">
+        </Form>
+    </div>
+</div>
 
 @code {
-    [Parameter] public int PlayerId { get; set; }
-    Player _player = new Player();
 
-    protected async override Task OnParametersSetAsync()
+    [Parameter]
+    public int PlayerId { get; set; }
+
+    Player _player = new();
+
+    protected override async Task OnParametersSetAsync()
     {
         _player = await Http.GetFromJsonAsync<Player>($"api/player/{PlayerId}");
     }
@@ -20,8 +28,8 @@
     async Task EditPlayer()
     {
         await Http.PutAsJsonAsync("api/player", _player);
-        await Js.InvokeVoidAsync("alert", $"Updated Successfully!");
+        await Js.InvokeVoidAsync("alert", "Updated Successfully!");
         UriHelper.NavigateTo("player");
-
     }
+
 }

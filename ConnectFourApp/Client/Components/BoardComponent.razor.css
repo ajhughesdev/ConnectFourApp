@@ -11,9 +11,7 @@ nav {
     width: 632px;
 }
 
-.logo {
-    margin-inline: 201px 179px;
-}
+.logo { margin-inline: 201px 179px; }
 
 button {
     padding: 9px 20px 10px 21px;
@@ -27,9 +25,7 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    background-color: hsl(346, 96%, 69%);
-}
+button:hover { background-color: hsl(346, 96%, 69%); }
 
 .play-menu {
     width: 632px;
@@ -43,8 +39,7 @@ button:hover {
     cursor: pointer;
 }
 
-.marker1,
-.marker2 {
+.marker1, .marker2 {
     display: block;
     height: 570px;
     width: 68px;
@@ -61,19 +56,14 @@ button:hover {
     z-index: 5;
 }
 
-.marker1:hover,
-.marker2:hover {
+.marker1:hover, .marker2:hover {
     opacity: 1;
     cursor: pointer;
 }
 
-.marker1 {
-    background-image: url("./assets/images/marker-red.svg");
-}
+.marker1 { background-image: url("./assets/images/marker-red.svg"); }
 
-.marker2 {
-    background-image: url("./assets/images/marker-yellow.svg");
-}
+.marker2 { background-image: url("./assets/images/marker-yellow.svg"); }
 
 main {
     display: flex;
@@ -91,8 +81,7 @@ main {
     margin-inline: auto;
 }
 
-.board-layer_black,
-.board-layer_white {
+.board-layer_black, .board-layer_white {
     position: absolute;
     top: 0;
     left: 0;
@@ -127,8 +116,7 @@ main {
     left: 0;
 }
 
-.player1,
-.player2 {
+.player1, .player2 {
     width: 70px;
     height: 75px;
     left: 0;
@@ -141,48 +129,23 @@ main {
     animation-fill-mode: forwards;
 }
 
-.player2 {
-    background-image: url('./assets/images/counter-red-large.svg');
-}
+.player2 { background-image: url('./assets/images/counter-red-large.svg'); }
 
-.player1 {
-    background-image: url('./assets/images/counter-yellow-large.svg');
-}
+.player1 { background-image: url('./assets/images/counter-yellow-large.svg'); }
 
-.column0,
-.a {
-    left: 17px;
-}
+.column0, .a { left: 17px; }
 
-.column1,
-.b {
-    left: calc(4rem + 41px);
-}
+.column1, .b { left: calc(4rem + 41px); }
 
-.column2,
-.c {
-    left: calc(8rem + 65px);
-}
+.column2, .c { left: calc(8rem + 65px); }
 
-.column3,
-.d {
-    left: calc(12rem + 89px);
-}
+.column3, .d { left: calc(12rem + 89px); }
 
-.column4,
-.e {
-    left: calc(16rem + 113px);
-}
+.column4, .e { left: calc(16rem + 113px); }
 
-.column5,
-.f {
-    left: calc(20rem + 137px);
-}
+.column5, .f { left: calc(20rem + 137px); }
 
-.column6,
-.g {
-    left: calc(24rem + 161px);
-}
+.column6, .g { left: calc(24rem + 161px); }
 
 .drop1 {
     animation-duration: .5s;
@@ -215,137 +178,64 @@ main {
 }
 
 @keyframes drop1 {
+    75%, 90%, 97%, 100% { transform: translateY(1.1rem); }
 
-    75%,
-    90%,
-    97%,
-    100% {
-        transform: translateY(1.1rem);
-    }
+    80% { transform: translateY(0); }
 
-    80% {
-        transform: translateY(0);
-    }
+    95% { transform: translateY(.5rem); }
 
-    95% {
-        transform: translateY(.5rem);
-    }
-
-    99% {
-        transform: translateY(.75rem);
-    }
+    99% { transform: translateY(.75rem); }
 }
 
 @keyframes drop2 {
+    75%, 90%, 97%, 100% { transform: translateY(6.6rem); }
 
-    75%,
-    90%,
-    97%,
-    100% {
-        transform: translateY(6.6rem);
-    }
+    80% { transform: translateY(4.5rem); }
 
-    80% {
-        transform: translateY(4.5rem);
-    }
+    95% { transform: translateY(5.5rem); }
 
-    95% {
-        transform: translateY(5.5rem);
-    }
-
-    99% {
-        transform: translateY(6rem);
-    }
+    99% { transform: translateY(6rem); }
 }
 
 @keyframes drop3 {
+    75%, 90%, 97%, 100% { transform: translateY(12.1rem); }
 
-    75%,
-    90%,
-    97%,
-    100% {
-        transform: translateY(12.1rem);
-    }
+    80% { transform: translateY(9rem); }
 
-    80% {
-        transform: translateY(9rem);
-    }
+    95% { transform: translateY(10.5rem); }
 
-    95% {
-        transform: translateY(10.5rem);
-    }
-
-    99% {
-        transform: translateY(11.33rem);
-    }
+    99% { transform: translateY(11.33rem); }
 }
 
 @keyframes drop4 {
+    75%, 90%, 97%, 100% { transform: translateY(17.6rem); }
 
-    75%,
-    90%,
-    97%,
-    100% {
-        transform: translateY(17.6rem);
-    }
+    80% { transform: translateY(13.5rem); }
 
-    80% {
-        transform: translateY(13.5rem);
-    }
+    95% { transform: translateY(15.5rem); }
 
-    95% {
-        transform: translateY(15.5rem);
-    }
-
-    99% {
-        transform: translateY(16.5rem);
-    }
+    99% { transform: translateY(16.5rem); }
 }
 
 @keyframes drop5 {
+    75%, 90%, 97%, 100% { transform: translateY(23.1rem); }
 
-    75%,
-    90%,
-    97%,
-    100% {
-        transform: translateY(23.1rem);
-    }
+    80% { transform: translateY(19rem); }
 
-    80% {
-        transform: translateY(19rem);
-    }
+    95% { transform: translateY(21rem); }
 
-    95% {
-        transform: translateY(21rem);
-    }
-
-    99% {
-        transform: translateY(22rem);
-    }
+    99% { transform: translateY(22rem); }
 }
 
 @keyframes drop6 {
+    75%, 90%, 97%, 100% { transform: translateY(28.6rem); }
 
-    75%,
-    90%,
-    97%,
-    100% {
-        transform: translateY(28.6rem);
-    }
+    80% { transform: translateY(24.5rem); }
 
-    80% {
-        transform: translateY(24.5rem);
-    }
+    95% { transform: translateY(26.5rem); }
 
-    95% {
-        transform: translateY(26.5rem);
-    }
-
-    99% {
-        transform: translateY(27.5rem);
-    }
+    99% { transform: translateY(27.5rem); }
 }
-
 
 .winning-message {
     position: absolute;

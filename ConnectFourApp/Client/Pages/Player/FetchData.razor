@@ -2,51 +2,58 @@
 @inject HttpClient Client
 @inject IJSRuntime Js
 
-<h3>Players</h3>
-<small>Add as many players as you wish.</small>
-<div>
-    <a href="https://ajhughesdev.github.io/ConnectFourApp/player/create">Create New</a>
-</div>
-<br />
+<div class="form-container">
 
-@if (Players == null)
-{
-    <text>Loading...</text>
+    <div class="form-menu">
+
+        <h1 class="form-title">high scores</h1>
+
+        <p class="form-p">Add yourself to the high score list</p>
+        @if (Players == null)
+        {
+            <h2 class="conditional-title">Loading...</h2>
+        }
+        else if (Players.Length == 0)
+        {
+            <h2 class="no-records">No Records Found.</h2>
+            <a class="form-a" href="/player/create">Create New</a>
+        }
+        else
+        {
+            <div class="table-container">
+
+                <div class="high-scores">
+                    <div class="form-head">
+                        <div>Initials</div>
+                        <div>Score</div>
+                        <div></div>
+                    </div>
+                    <div class="form-body">
+                        @foreach (var player in Players)
+                        {
+                            <div>@player.Initials</div>
+                            <div>@player.Score</div>
+                            <div class="buttons">
+                                <a class="table-button" href="/player/edit/@player.Id">Edit</a>
+                                <button class="table-button" @onclick="@(() => Delete(player.Id))">Delete</button>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <a class="form-a" href="/player/create">Create New</a>
+            </div>
+        }
+
+    </div>
+</div>
 }
-else if (Players.Length == 0)
-{
-    <text>No Records Found.</text>
-}
-else
-{
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Initials</th>
-                <th>Score</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var player in Players)
-            {
-                <tr>
-                    <td>@player.Id</td>
-                    <td>@player.Initials</td>
-                    <td>@player.Score</td>
-                    <td>
-                        <a href="https://ajhughesdev.github.io/ConnectFourApp/player/edit/@player.Id">Edit</a>
-                        <button @onclick="@(() => Delete(player.Id))">Delete</button>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-}
+
 
 @code {
-    Player[] Players { get; set; }
+
+    Player[]
+        Players { get; set; }
+
     protected override async Task OnInitializedAsync()
     {
         Players = await Client.GetFromJsonAsync<Player[]>("api/player");
@@ -61,4 +68,7 @@ else
             await OnInitializedAsync();
         }
     }
+
+}
+
 }

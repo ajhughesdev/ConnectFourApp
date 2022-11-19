@@ -44,7 +44,6 @@ h1 {
     gap: 30px;
     text-align: center;
     align-items: center;
-
 }
 
 button, a {
@@ -58,19 +57,12 @@ button, a {
     font-weight: 700;
     line-height: calc(30.62 / 24);
     padding: 20px;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 31px;
     color: hsl(0, 0%, 0%);
 }
 
-button {
-    background-color: hsl(0, 0%, 100%);
-}
+button { background-color: hsl(0, 0%, 100%); }
 
-a {
-    background-color: hsl(346, 96%, 69%);
-}
+a { background-color: hsl(346, 96%, 69%); }
 
 button:hover, a:hover {
     border: 3px solid hsl(256, 66%, 50%);
@@ -78,15 +70,4 @@ button:hover, a:hover {
     cursor: pointer;
 }
 
-span {
-    margin-inline: auto;
-}
-
-/* .fade-in {
-    animation: 300ms ease-out 0;
-}
-
-.fade-out {
-    animation: 300ms ease-out 0;
-    opacity: 0;
-} */
+span { margin-inline: auto; }
