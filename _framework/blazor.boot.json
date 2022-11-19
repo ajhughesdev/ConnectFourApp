@@ -7,8 +7,8 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "ConnectFourApp.Client.dll": "sha256-+QxEfYZ89mvSztTfqeQl4Rvv9FOsGP6dg1y6pdaEzq8=",
-      "ConnectFourApp.Shared.dll": "sha256-DWRjmhzJmTrL\/gwBt0M9iDDb7KMhNNV64QCJpSQ5UQw=",
+      "ConnectFourApp.Client.dll": "sha256-U\/Rl4F6+NnDMZKeN\/yKEJtIj1Qv\/J7ISztDwWXon0GM=",
+      "ConnectFourApp.Shared.dll": "sha256-GU8txTrLs40halLyeJgMw84c4Mo2DMMAWodG0twCf48=",
       "Microsoft.AspNetCore.Components.dll": "sha256-ILlrHzsaG+igw\/60+PJsl4TZtHXK\/+4DBSvCe781fsg=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-uHCCaGJXe7sCPmxBVHbs7rcayQnMF5UI9wsaEac\/\/1Y=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-SNmHbbcSO7IswaP8iTiVohRLow\/Tfa3V1wQx+DQesqg=",
