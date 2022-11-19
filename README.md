@@ -1,3 +1,5 @@
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ajhughesdev/ConnectFourApp/Deploy%20Blazor%20WASM%20to%20GitHub%20Pages)
+
 
 # Connect Four App
 
