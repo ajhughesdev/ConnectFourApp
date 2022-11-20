@@ -25,6 +25,8 @@ A **List** populated with a retrievable value representing every playable space 
 
 ## API Reference
 
+Future plans for a "high scores" list. For now I've implemented some basic CRUD operations available at `/player` but because the project is deployed to GitHub pages it will require deploying the project on a local machine to test this feature.
+
 #### Get all reservations
 
 ```csharp
