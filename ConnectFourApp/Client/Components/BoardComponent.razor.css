@@ -61,9 +61,9 @@ button:hover { background-color: hsl(346, 96%, 69%); }
     cursor: pointer;
 }
 
-.marker1 { background-image: url("./assets/images/marker-red.svg"); }
+.marker1 { background-image: url("https://ajhughesdev.github.io/ConnectFourApp/assets/images/marker-red.svg"); }
 
-.marker2 { background-image: url("./assets/images/marker-yellow.svg"); }
+.marker2 { background-image: url("https://ajhughesdev.github.io/ConnectFourApp/assets/images/marker-yellow.svg"); }
 
 main {
     display: flex;
@@ -129,9 +129,9 @@ main {
     animation-fill-mode: forwards;
 }
 
-.player2 { background-image: url('./assets/images/counter-red-large.svg'); }
+.player2 { background-image: url('https://ajhughesdev.github.io/ConnectFourApp/assets/images/counter-red-large.svg'); }
 
-.player1 { background-image: url('./assets/images/counter-yellow-large.svg'); }
+.player1 { background-image: url('https://ajhughesdev.github.io/ConnectFourApp/assets/images/counter-yellow-large.svg'); }
 
 .column0, .a { left: 17px; }
 
