@@ -21,6 +21,7 @@ html {
   position: relative;
   background-color: hsl(256, 66%, 50%);
   height: 100vh;
+    overflow: hidden;
 }
 
 .app {
@@ -93,7 +94,7 @@ html {
   font-weight: 700;
   text-align: center;
   background-color: rgb(0 0 0 / .5);
-  background-filter: blur(10px);
+  backdrop-filter: blur(10px);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -108,13 +109,15 @@ html {
 .high-scores, .no-records {
   border: 3px solid black;
   width: 75%;
-  min-height: 200px;
+  height: 200px;
   position: relative;
   margin-inline: auto;
   text-transform: uppercase;
   margin-block: 1.5rem;
   padding: 20px;
   border-radius: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .no-records {

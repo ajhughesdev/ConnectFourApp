@@ -13,6 +13,8 @@ builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
+app.UsePathBase("/ConnectFourApp");
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

@@ -8,9 +8,7 @@
 	<ItemGroup>
 		<SupportedPlatform Include="browser" />
 	</ItemGroup>
-	<ItemGroup>
-		<None Remove="System.ComponentModel.Annotations" />
-	</ItemGroup>
+
 	<ItemGroup>
 		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
 	</ItemGroup>

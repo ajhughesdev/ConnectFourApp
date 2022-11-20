@@ -1,7 +1,7 @@
 ﻿<div class="player-board">
     <img src="@ImgSrc" alt="" class="player-board-img"/>
     <p>player @(PlayerNum)</p>
-    <p>0</p>
+    <p>@Score</p>
 </div>
 
 @code {
@@ -11,5 +11,8 @@
 
     [Parameter]
     public string ImgSrc { get; set; }
+
+    [Parameter]
+    public int Score { get; set; }
 
 }

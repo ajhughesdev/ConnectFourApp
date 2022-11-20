@@ -1,4 +1,5 @@
 ﻿using ConnectFourApp.Shared.Models;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace ConnectFourApp.Server.Data
