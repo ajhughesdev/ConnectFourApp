@@ -1,3 +1,5 @@
+![Screen Shot 2](https://user-images.githubusercontent.com/69234359/202904993-c9c77162-04fe-40ba-8a07-91cd9c277f55.jpg)
+
 ![Mastodon Follow](https://img.shields.io/mastodon/follow/109254332352746633?domain=https%3A%2F%2Fmastodon.ajhughes.dev&style=social) <br>
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ajhughesdev/ConnectFourApp/Deploy%20Blazor%20WASM%20to%20GitHub%20Pages)   
 
@@ -69,6 +71,7 @@ in class PlayerController
 | `Id`      | `int`    | **Key** Id of player              |  
 | `Initials`| `string` | **Required** Initials of player   |
 | `Score`   | `int`    | **Required** Score of player      |
+
 
 ## Authors
 
