@@ -7,9 +7,9 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "ConnectFourApp.Client.dll": "sha256-u1AVrE3EBx0f78nylSEiYcPHuh9Ge3lpMY9NKr+dDPM=",
+      "ConnectFourApp.Client.dll": "sha256-DpvIPm94QejjdUG8dKJCQV0RtOmu8qAXaYcUCfq3wBI=",
       "ConnectFourApp.Shared.dll": "sha256-GU8txTrLs40halLyeJgMw84c4Mo2DMMAWodG0twCf48=",
-      "Microsoft.AspNetCore.Components.dll": "sha256-ILlrHzsaG+igw\/60+PJsl4TZtHXK\/+4DBSvCe781fsg=",
+      "Microsoft.AspNetCore.Components.dll": "sha256-M3bQFz\/oIBndRwZ8OJACd8EvJR7kvcfDoyVGsQECAOs=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-uHCCaGJXe7sCPmxBVHbs7rcayQnMF5UI9wsaEac\/\/1Y=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-SNmHbbcSO7IswaP8iTiVohRLow\/Tfa3V1wQx+DQesqg=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-fU++FmqwUrqJCEERHJg9QV1FYgo7QPFzS8YSn9pqCe0=",
@@ -32,7 +32,6 @@
       "System.ComponentModel.dll": "sha256-Qssp+YWlAZw03rhXDz8auxAqI87BtJ00YYYkOj9jbSw=",
       "System.ComponentModel.Primitives.dll": "sha256-J6P\/7sFQNJJDSqZ4CNye3h0iCkjxIecHaUUGop+b+Fs=",
       "System.ComponentModel.TypeConverter.dll": "sha256-WpKMYAysYc40a4RFllwW8jmp+e9+X\/lQkpZ38SntlZE=",
-      "System.Console.dll": "sha256-ZCKL8dFzyLT1whU8ifDdMCDs2zX2nIDRcQb2uNCdNf4=",
       "System.dll": "sha256-BNWEPToYca0k2Y0PYNhWWJz+D2hRVoqA4pqCB6I0mxE=",
       "System.Linq.dll": "sha256-uCVsMBsB4KcMaPHbFqjY1MOwuOn0opKL5O\/B9pW85as=",
       "System.Linq.Expressions.dll": "sha256-jvUE8rhPE9VvlvH\/noVQDm8P\/Q4CJnTt7g12+L+Feaw=",
@@ -41,7 +40,7 @@
       "System.Net.Http.Json.dll": "sha256-iEXjX6jq0nrCgfNSd1rrMbw6f5D5vyqJTRtGBvmC\/Lw=",
       "System.Net.Primitives.dll": "sha256-zr\/H1koT0iVU2B5uyLa3HFXjPjGAODt6alCqWpWrXo0=",
       "System.ObjectModel.dll": "sha256-SrMV0LmueLJSaJd\/Aevjg6KRqsLGid5FhOuNvWuMnMM=",
-      "System.Private.CoreLib.dll": "sha256-O72TZ+CLKspRC33Wa0hSmFAS5DptmT0g5BKoyjB0+NQ=",
+      "System.Private.CoreLib.dll": "sha256-9yuecrxkNtBzZVmLF\/wZ+euMUO2e7SvmL7vGLUIpVZE=",
       "System.Private.Runtime.InteropServices.JavaScript.dll": "sha256-YyjLFdu5zg3whmJLOKgk\/3yfHqyl10dEizSWK7UzQtA=",
       "System.Private.Uri.dll": "sha256-gVYijzHq9yAgGPVgL0eaGFFQcLhbvrxTYdIzGk7PWsg=",
       "System.Runtime.CompilerServices.Unsafe.dll": "sha256-5IU6GUX8qOctLAYHuQ7clOc3ohNJ6aky7koryZ5i6W8=",
