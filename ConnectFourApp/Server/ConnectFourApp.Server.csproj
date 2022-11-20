@@ -25,12 +25,4 @@
 		<ProjectReference Include="..\Shared\ConnectFourApp.Shared.csproj" />
 	</ItemGroup>
 
-
-	<ItemGroup>
-		<None Remove="Microsoft.AspNetCore.Components.WebAssembly" />
-		<None Remove="Controllers\" />
-		<None Remove="Microsoft.EntityFrameworkCore" />
-		<None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
-		<None Remove="Microsoft.EntityFrameworkCore.Tools" />
-	</ItemGroup>
 </Project>

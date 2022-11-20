@@ -7,7 +7,7 @@
     <header>
         <nav class="nav-menu">
             <button type="button">menu</button>
-            <img src="https://ajhughesdev.github.io/ConnectFourApp/assets/images/logo.svg" alt="logo" class="logo"/>
+            <img src="./assets/images/logo.svg" alt="logo" class="logo"/>
             <button @onclick="@ResetGame">restart</button>
         </nav>
     </header>
@@ -21,13 +21,13 @@
         <span class=@($"marker{State.CurrentPlayer} f") @onclick="() => PlayPiece(5)"></span>
         <span class=@($"marker{State.CurrentPlayer} g") @onclick="() => PlayPiece(6)"></span>
     </div>
-
+    
     <main>
 
-        <PlayerScoreBoardComponent PlayerNum="1" ImgSrc="https://ajhughesdev.github.io/ConnectFourApp/assets/images/player-one.svg"/>
+        <PlayerScoreBoardComponent PlayerNum="1" ImgSrc="./assets/images/player-one.svg" Score="@Player1Score" />
 
         <div class="board-container">
-            <img src="https://ajhughesdev.github.io/ConnectFourApp/assets/images/board-layer-black-large.svg" class="board-layer_black" alt=""/>
+            <img src="./assets/images/board-layer-black-large.svg" class="board-layer_black" alt=""/>
             <div class="board">
                 @for (var i = 0; i < 42; i++)
                 {
@@ -43,14 +43,14 @@
                 <span class="@_chips[i]"></span>
             }
 
-            <img src="https://ajhughesdev.github.io/ConnectFourApp/assets/images/board-layer-white-large.svg" class="board-layer_white" alt=""/>
+            <img src="./assets/images/board-layer-white-large.svg" class="board-layer_white" alt=""/>
         </div>
 
-        <PlayerScoreBoardComponent PlayerNum="2" ImgSrc="https://ajhughesdev.github.io/ConnectFourApp/assets/images/player-two.svg"/>
+        <PlayerScoreBoardComponent PlayerNum="2" ImgSrc="./assets/images/player-two.svg" Score="@Player2Score"/>
 
     </main>
 
-    <YourTurnComponent @ref="_timer" TimerOut="@TimesUp" PlayerFill="@State.CurrentPlayer" Winner="@_winner"/>
+    <YourTurnComponent @ref="_timer" PlayerFill="@State.CurrentPlayer" Winner="@_winner"/>
 
     <div class="winning-message" style="@ResetWinner">
         <span class="winner">@($"PLAYER {_winner}")</span>
@@ -69,6 +69,10 @@
     private string _errorMessage = string.Empty;
 
     private string ResetWinner => (_winner == string.Empty) ? "display: none;" : "";
+
+    public int Player1Score = 0;
+
+    public int Player2Score = 0;
 
     protected override void OnInitialized()
     {
@@ -108,21 +112,26 @@
             State.WinState.Player2Wins => "2",
             State.WinState.Draw => "TIE",
             _ => ""
-            };
+        };
+
+        if (_winner == "1")
+        {
+            Player1Score += 1;
+        }
+        else if (_winner == "2")
+        {
+            Player2Score += 1;
+        }
     }
 
-    void TimesUp()
-    {
-        Console.WriteLine("Times Up!");
-    }
+
 
     void ResetGame()
-    {
+    {        
         State.ResetBoard();
         _winner = string.Empty;
         _errorMessage = string.Empty;
         _chips = new string[42];
-
         _timer.Start(30);
     }
 

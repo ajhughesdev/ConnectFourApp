@@ -16,7 +16,7 @@
         else if (Players.Length == 0)
         {
             <h2 class="no-records">No Records Found.</h2>
-            <a class="form-a" href="https://ajhughesdev.github.io/ConnectFourApp/player/create">Create New</a>
+            <a class="form-a" href="player/create">Create New</a>
         }
         else
         {
@@ -34,13 +34,13 @@
                             <div>@player.Initials</div>
                             <div>@player.Score</div>
                             <div class="buttons">
-                                <a class="table-button" href="https://ajhughesdev.github.io/ConnectFourApp/player/edit/@player.Id">Edit</a>
+                                <a class="table-button" href="player/edit/@player.Id">Edit</a>
                                 <button class="table-button" @onclick="@(() => Delete(player.Id))">Delete</button>
                             </div>
                         }
                     </div>
                 </div>
-                <a class="form-a" href="https://ajhughesdev.github.io/ConnectFourApp/player/create">Create New</a>
+                <a class="form-a" href="player/create">Create New</a>
             </div>
         }
 
