@@ -62,9 +62,9 @@ button:hover[b-wntv24wik3] { background-color: hsl(346, 96%, 69%); }
     cursor: pointer;
 }
 
-.marker1[b-wntv24wik3] { background-image: url("./assets/images/marker-red.svg"); }
+.marker1[b-wntv24wik3] { background-image: url("https://ajhughesdev.github.io/ConnectFourApp/assets/images/marker-red.svg"); }
 
-.marker2[b-wntv24wik3] { background-image: url("./assets/images/marker-yellow.svg"); }
+.marker2[b-wntv24wik3] { background-image: url("https://ajhughesdev.github.io/ConnectFourApp/assets/images/marker-yellow.svg"); }
 
 main[b-wntv24wik3] {
     display: flex;
@@ -130,9 +130,9 @@ main[b-wntv24wik3] {
     animation-fill-mode: forwards;
 }
 
-.player2[b-wntv24wik3] { background-image: url('./assets/images/counter-red-large.svg'); }
+.player2[b-wntv24wik3] { background-image: url('https://ajhughesdev.github.io/ConnectFourApp/assets/images/counter-red-large.svg'); }
 
-.player1[b-wntv24wik3] { background-image: url('./assets/images/counter-yellow-large.svg'); }
+.player1[b-wntv24wik3] { background-image: url('https://ajhughesdev.github.io/ConnectFourApp/assets/images/counter-yellow-large.svg'); }
 
 .column0[b-wntv24wik3], .a[b-wntv24wik3] { left: 17px; }
 
