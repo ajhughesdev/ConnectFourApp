@@ -1,127 +1,212 @@
-@inject State State
-@using ConnectFourApp.Client.Components
-@using ConnectFourApp.Client.Services
+﻿@using ConnectFourApp.Shared.Models
+
+<PageTitle>Frontend Mentor | Connect Four game</PageTitle>
 
 <div class="page-container">
 
     <header>
         <nav class="nav-menu">
             <button type="button">menu</button>
-            <img src="./assets/images/logo.svg" alt="logo" class="logo" />
+            <img src="./assets/images/logo.svg" alt="logo" class="logo"/>
+            
             <button @onclick="@ResetGame">restart</button>
+        
         </nav>
-    </header>
-
-    <div class="play-menu">
-        <span class=@($"marker{State.CurrentPlayer} a") @onclick="() => PlayPiece(0)"></span>
-        <span class=@($"marker{State.CurrentPlayer} b") @onclick="() => PlayPiece(1)"></span>
-        <span class=@($"marker{State.CurrentPlayer} c") @onclick="() => PlayPiece(2)"></span>
-        <span class=@($"marker{State.CurrentPlayer} d") @onclick="() => PlayPiece(3)"></span>
-        <span class=@($"marker{State.CurrentPlayer} e") @onclick="() => PlayPiece(4)"></span>
-        <span class=@($"marker{State.CurrentPlayer} f") @onclick="() => PlayPiece(5)"></span>
-        <span class=@($"marker{State.CurrentPlayer} g") @onclick="() => PlayPiece(6)"></span>
-    </div>
-
-    <main>
     
-        <PlayerScoreBoardComponent PlayerNum="1" ImgSrc="./assets/images/player-one.svg" />
-
+    </header>
+    
+    <main>
         <div class="board-container">
-            <img src="./assets/images/board-layer-black-large.svg" class="board-layer_black" alt="" />
+            <img src="./assets/images/board-layer-black-large.svg" alt="" class="board-layer" />
             <div class="board">
-                @for (var i = 0; i < 42; i++)
+                @for (var i = 0; i < 7; i++)
                 {
-                    <span class="board-cell"><span></span></span>
+                    <div class="column">
+                        @for (var j = 0; j < 6; j++)
+                        {
+                            <div class=@($"gamepiece {_gameBoard.Board[i,j].Player.ToString().ToLower()} {_gameBoard.Board[i,j].Player.ToString().ToLower()}-drop{j} {_gameBoard.Board[i,j].Player.ToString().ToLower()}-col{i}")></div>
+
+                        }
+
+                    </div>
+
                 }
 
             </div>
 
-            @for (var i = 0; i < 42; i++)
-            {
-                <span class="@_chips[i]"></span>
-            }
+            <img src="./assets/images/board-layer-white-large.svg" alt="" class="board-layer" />
 
-            <img src="./assets/images/board-layer-white-large.svg" class="board-layer_white" alt="" />
         </div>
 
-        <PlayerScoreBoardComponent PlayerNum="2" ImgSrc="./assets/images/player-two.svg" />
+        <div class="board-container">
+            <div class="board">
+                @for (var i = 0; i < 7; i++)
+                {
+                    <div class="column-overlay">
+                        @for (var j = 0; j < 6; j++)
+                        {
+                            var x = i;
+                            var y = j;
+
+                            <div class="gamepiece-overlay" @onclick="@(() => PlayPiece(x,y))" style="@(GetWinSpaces(_winningPlay, i, j) ? "background: transparent url('./assets/images/circle.svg') center center no-repeat" : "")"></div>
+
+                        }
+
+                    </div>
+
+                }
+
+            </div>
+
+        </div>
 
     </main>
 
-    <YourTurnComponent @ref="_timer" TimerOut="@TimesUp" PlayerFill="@State.CurrentPlayer" Winner="@_winner" />
-
-    <div class="winning-message" style="@ResetWinner">
-        <span class="winner">@($"PLAYER {_winner}")</span>
-        <span>wins</span>
-        <button class="reset-button" @onclick="@ResetGame">play again</button>
-    </div>
-
 </div>
+
 
 @code {
 
-    private string[] _chips = new string[42];
+    GameBoard _gameBoard = new();
+    GamePlayer _currentTurn = GamePlayer.Player1;
+    WinningPlay _winningPlay;
 
-    private string _winner = string.Empty;
-
-    private string _errorMessage = string.Empty;
-
-    private string ResetWinner => (_winner == string.Empty) ? "display: none;" : "";
-
-    protected override void OnInitialized()
+    private void PlayPiece(int x, int y)
     {
-        State.ResetBoard();
-    }
+        if (_winningPlay != null) { return; }
 
-    protected override void OnAfterRender(bool firstRender)
-    {
-        if (firstRender)
+        var clickedSpace = _gameBoard.Board[x, y];
+
+        if (clickedSpace.Player == GamePlayer.None)
         {
-            _timer.Start(30);
-        }
-    }
+            while (y < 5)
+            {
+                var nextSpace = _gameBoard.Board[x, y + 1];
 
-    private YourTurnComponent _timer;
+                y += 1;
 
-    private void PlayPiece(byte column)
-    {
-        _errorMessage = string.Empty;
+                if (nextSpace.Player == GamePlayer.None)
+                {
+                    clickedSpace = nextSpace;
 
-        try
-        {
-            var playedCell = State.PlayPiece(column);
-            var addCssClass = $"player{State.CurrentPlayer} column{column} drop{playedCell}";
-            _chips[State.CurrentTurn - 1] = addCssClass;
+                }
 
-            _timer.Start(30);
-        }
-        catch (ArgumentException ex)
-        {
-            _errorMessage = ex.Message;
+            }
+
+            clickedSpace.Player = _currentTurn;
+
         }
 
-        _winner = State.CheckForWin() switch
+        _winningPlay = GetWinner();
+
+        if (_winningPlay == null)
         {
-            State.WinState.Player1Wins => "1",
-            State.WinState.Player2Wins => "2",
-            State.WinState.Draw => "TIE",
-            _ => ""
-        };
+            SwitchTurns();
+
+        }
+
     }
 
-    void TimesUp()
+    private void SwitchTurns() => _currentTurn = _currentTurn == GamePlayer.Player1 ? GamePlayer.Player2 : GamePlayer.Player1;
+
+    private WinningPlay GetWinner()
     {
-        Console.WriteLine("Times Up!");
+        for (var i = 0; i < 7; i++)
+        {
+            for (var j = 0; j < 6; j++)
+            {
+                var winningPlay = CheckForWin(i, j, CheckWinPosition.Vertical);
+                if (winningPlay != null) { return winningPlay; }
+
+                winningPlay = CheckForWin(i, j, CheckWinPosition.ForwardDiagonal);
+                if (winningPlay != null) { return winningPlay; }
+
+                winningPlay = CheckForWin(i, j, CheckWinPosition.Horizontal);
+                if (winningPlay != null) { return winningPlay; }
+
+                winningPlay = CheckForWin(i, j, CheckWinPosition.BackwardDiagonal);
+                if (winningPlay != null) { return winningPlay; }
+
+            }
+
+        }
+
+        return null;
+
     }
 
-    void ResetGame()
+    private WinningPlay CheckForWin(int i, int j, CheckWinPosition pos)
     {
-        State.ResetBoard();
-        _winner = string.Empty;
-        _errorMessage = string.Empty;
-        _chips = new string[42];
+        var currentPlayer = _gameBoard.Board[i, j];
 
-        _timer.Start(30);
+        if (currentPlayer.Player == GamePlayer.None) { return null; }
+
+        var x = i;
+        var y = j;
+        var z = 1;
+
+        var winningMoves = new List<string>();
+
+        while (z < 4)
+        {
+            switch (pos)
+            {
+                case CheckWinPosition.Vertical:
+                    y -= 1;
+                    break;
+                case CheckWinPosition.ForwardDiagonal:
+                    x += 1;
+                    y -= 1;
+                    break;
+                case CheckWinPosition.Horizontal:
+                    x += 1;
+                    break;
+                case CheckWinPosition.BackwardDiagonal:
+                    x += 1;
+                    y += 1;
+                    break;
+            }
+
+            if (x is < 0 or > 6 || y is < 0 or > 5) { break; }
+
+            if (_gameBoard.Board[x, y].Player == currentPlayer.Player)
+            {
+                winningMoves.Add($"{x},{y}");
+                z++;
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
+        if (z < 4) return null;
+
+        winningMoves.Add($"{i},{j}");
+
+        return new WinningPlay()
+            {
+                WinningMoves = winningMoves,
+                WinningPlayer = currentPlayer.Player,
+                WinningPosition = pos,
+
+            };
+    }
+
+    private void ResetGame()
+    {
+        _gameBoard = new GameBoard();
+        _currentTurn = GamePlayer.Player1;
+        _winningPlay = null;
+
+    }
+
+    private static bool GetWinSpaces(WinningPlay winningPlay, int i, int j)
+    {
+
+        return winningPlay?.WinningMoves?.Contains($"{i},{j}") ?? false;
+
     }
 
 }

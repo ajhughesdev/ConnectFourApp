@@ -33,6 +33,14 @@ html {
     width: 100vw;
 }
 
+span[class^="marker_"] {
+    opacity: 1;
+}
+
+span[class^="no-marker_"] {
+    opacity: 0;
+}
+
 @media screen and (min-width: 1441px) {
     .page-container {
         height: 916px;

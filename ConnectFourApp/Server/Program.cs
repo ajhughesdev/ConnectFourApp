@@ -1,7 +1,8 @@
-﻿using ConnectFourApp.Server.Data;
+using ConnectFourApp.Server.Data;
+
 using Microsoft.EntityFrameworkCore;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
@@ -10,7 +11,9 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(buil
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
-var app = builder.Build();
+WebApplication app = builder.Build();
+
+//app.UsePathBase("/ConnectFourApp");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -37,4 +40,3 @@ app.MapControllers();
 app.MapFallbackToFile("index.html");
 
 app.Run();
-
