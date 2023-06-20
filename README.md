@@ -7,6 +7,7 @@
 
 This is a work-in-progress solution to the [Connect Four game](https://www.frontendmentor.io/challenges/connect-four-game-6G8QVH923s) challenge on FrontendMentor.io - a hosted Blazor WebAssembly app.
 
+**Check out a React version [here](https://github.com/ajhughesdev/connect-four-js)!**
 
 ## Features
 
